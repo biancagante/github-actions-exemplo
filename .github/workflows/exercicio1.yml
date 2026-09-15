@@ -1,0 +1,33 @@
+name: "Meu workflow - ex 1"
+on:
+  workflow_dispatch:
+    inputs:
+      ambiente:
+        description: 'Deploy local'
+        required: true
+        default: 'homologacao'
+
+  push:
+    branches: [main, develop]
+    paths: 
+      - 'src/'
+jobs:
+    job01:
+      name: 'Teste 1'
+      runs-on: ubuntu-latest
+      
+      steps:
+        - name: 'Passo dentro do job 1'
+          uses: actions/checkout@v3
+          with:
+            ref: main
+        
+    job02:
+      name: 'Teste 2'
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: 'Passo dentro do job 2'
+          uses: actions/checkout@v3
+          with:
+            ref: develop
