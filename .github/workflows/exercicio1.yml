@@ -1,9 +1,10 @@
 name: "Meu workflow - ex 1"
+
 on:
   workflow_dispatch:
     inputs:
       ambiente:
-        description: 'Deploy local'
+        description: 'Testes locais de jobs'
         required: true
         default: 'homologacao'
 
